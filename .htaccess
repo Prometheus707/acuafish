@@ -1,0 +1,17 @@
+# # Activar el motor de reescritura
+# RewriteEngine On
+# RewriteBase /pecesCleanCode2/
+
+# # Bloquear navegación directa a carpetas (listar directorios)
+# Options -Indexes
+
+# # Permitir todas las peticiones a archivos existentes
+# RewriteCond %{REQUEST_FILENAME} -f
+# RewriteRule ^ - [L]
+
+# # Permitir todas las peticiones a directorios existentes
+# RewriteCond %{REQUEST_FILENAME} -d
+# RewriteRule ^ - [L]
+
+# # Redirigir todas las demás solicitudes al controlador frontal
+# RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
