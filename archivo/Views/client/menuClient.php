@@ -9,39 +9,27 @@
 <html lang="es">
 <head>
    <?php  
-    $title = 'ACUAFISH ADMIN';
+    $title = 'ACUAFISH CLIENTE';
     require_once __DIR__ . '/../parcials/head.php';
    ?>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <?php  
      require_once __DIR__ . '/../parcials/navbarClient.php';
     ?>
-    <!-- Contenido principal -->
-    <div class="container my-4">
-        <!-- Carrusel simplificado -->
-        <div id="mainCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="bg-primary text-white p-5 text-center rounded">
-                        <h2>Bienvenido a ACUAFISH</h2>
-                        <p>Tu tienda especializada en peces y acuarios</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="bg-info text-white p-5 text-center rounded">
-                        <h2>Nuevos Peces Tropicales</h2>
-                        <p>Descubre nuestra nueva colección</p>
-                    </div>
-                </div>
-            </div>
+    <div class="container my-4 flex-grow-1">
+        <!-- Selector de categorías -->
+        <div class="mb-4">
+            <label for="categoriaSelectClient" class="form-label fw-bold">Filtrar por categoría:</label>
+            <select id="categoriaSelectClient" class="form-select w-auto d-inline-block">
+               
+            </select>
         </div>
-        
-        <!-- Productos destacados simplificados -->
-        <h2 class="mb-3">Productos Destacados</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <!-- Producto 1 -->
-            <div class="col">
+
+        <!-- Cards de productos -->
+        <div id="productosContainer" class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Ejemplo de producto, puedes repetir o generar dinámicamente -->
+            <div class="col producto-card" data-categoria="peces">
                 <div class="card h-100">
                     <div class="bg-light" style="height: 150px;"></div>
                     <div class="card-body">
@@ -54,9 +42,7 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Producto 2 -->
-            <div class="col">
+            <div class="col producto-card" data-categoria="acuarios">
                 <div class="card h-100">
                     <div class="bg-light" style="height: 150px;"></div>
                     <div class="card-body">
@@ -69,9 +55,7 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Producto 3 -->
-            <div class="col">
+            <div class="col producto-card" data-categoria="accesorios">
                 <div class="card h-100">
                     <div class="bg-light" style="height: 150px;"></div>
                     <div class="card-body">
@@ -89,5 +73,20 @@
     <?php 
      require_once __DIR__ . '/../parcials/footer.php'; 
     ?>
+    <script type="module" src="../../../herramientas/js/usuario/client/productos/productos.js"></script>
+
+    <script>
+    // Filtrado simple en el frontend
+    document.getElementById('categoriaSelect').addEventListener('change', function() {
+        const categoria = this.value;
+        document.querySelectorAll('.producto-card').forEach(card => {
+            if (categoria === 'todas' || card.dataset.categoria === categoria) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+    </script>
 </body>
 </html>

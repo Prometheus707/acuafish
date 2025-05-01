@@ -52,6 +52,26 @@ class ProductoController {
             return;
         }
     }
+
+    private function actualizarProducto($request){
+        try {
+            $response = $this->ProductoService->actualizarProducto($request);
+            ResponseHandler::success($response);
+        } catch (Exception $e) {
+            ResponseHandler::error($e->getMessage());
+            return;
+        }
+    }
+
+    private function eliminarProducto($request){
+        try {
+            $response = $this->ProductoService->eliminarProducto($request);
+            ResponseHandler::success("producto eliminado con exito", $response);
+        } catch (Exception $e) {
+            ResponseHandler::error($e->getMessage());
+            return;
+        }
+    }
 }
 $pdo = Database::getInstance()->getConnection();
 $productoService = new ProductoService($pdo);

@@ -147,5 +147,110 @@ class ProductoModel {
             throw $e;
         }
     }
+
+    public function actualizarProducto($request) {
+        try {
+            $this->pdo->beginTransaction();
+            $query = $this->pdo->prepare("
+                UPDATE productos SET 
+                    nombre = :nombre,
+                    descripcion = :descripcion,
+                    precio = :precio,
+                    stock = :stock,
+                    categoria_id = :categoria_id
+                WHERE id_productos = :id_producto
+            ");
+            $query->bindParam(':nombre', $request['nombre'], PDO::PARAM_STR);
+            $query->bindParam(':descripcion', $request['descripcion'], PDO::PARAM_STR);
+            $query->bindParam(':precio', $request['precio']);
+            $query->bindParam(':stock', $request['stock'], PDO::PARAM_INT);
+            $query->bindParam(':categoria_id', $request['categoria_id'], PDO::PARAM_INT);
+            $query->bindParam(':id_producto', $request['id_producto'], PDO::PARAM_INT);
+            $query->execute();
+    
+            // Actualizar datos específicos según la categoría
+            switch ($request['categoria_id']) {
+                case "1": // Peces
+                    $query = $this->pdo->prepare("
+                        UPDATE peces SET 
+                            especie = :especie,
+                            tipo_pez_fk = :tipo_pez
+                        WHERE producto_id = :producto_id
+                    ");
+                    $query->bindParam(':especie', $request['especie'], PDO::PARAM_STR);
+                    $query->bindParam(':tipo_pez', $request['tipo_pez'], PDO::PARAM_INT);
+                    $query->bindParam(':producto_id', $request['id_producto'], PDO::PARAM_INT);
+                    $query->execute();
+                    break;
+                case "2": // Acuarios
+                    $query = $this->pdo->prepare("
+                        UPDATE acuarios SET 
+                            volumen_litros = :volumen_litros,
+                            dimensiones = :dimensiones,
+                            material_acuario = :material_acuario
+                        WHERE producto_id = :producto_id
+                    ");
+                    $query->bindParam(':volumen_litros', $request['volumen_litros']);
+                    $query->bindParam(':dimensiones', $request['dimensiones'], PDO::PARAM_STR);
+                    $query->bindParam(':material_acuario', $request['material_acuario'], PDO::PARAM_STR);
+                    $query->bindParam(':producto_id', $request['id_producto'], PDO::PARAM_INT);
+                    $query->execute();
+                    break;
+                case "3": // Accesorios
+                    $query = $this->pdo->prepare("
+                        UPDATE accesorios SET 
+                            potencia_w = :potencia_w,
+                            material = :material,
+                            tipo_accesorio_fk = :tipo_accesorio
+                        WHERE producto_id = :producto_id
+                    ");
+                    $query->bindParam(':potencia_w', $request['potencia_w'], PDO::PARAM_INT);
+                    $query->bindParam(':material', $request['material'], PDO::PARAM_STR);
+                    $query->bindParam(':tipo_accesorio', $request['tipo_accesorio'], PDO::PARAM_INT);
+                    $query->bindParam(':producto_id', $request['id_producto'], PDO::PARAM_INT);
+                    $query->execute();
+                    break;
+            }
+            $this->pdo->commit();
+            return true;
+        } catch (PDOException $e) {
+            $this->pdo->rollBack();
+            error_log("Actualización de producto fallida: " . $e->getMessage());
+            throw $e;
+        }
+    }
+
+    public function eliminarProducto($productoId) {
+        try {
+            $this->pdo->beginTransaction();
+            $query = $this->pdo->prepare("SELECT categoria_id FROM productos WHERE id_productos = :producto_id");
+            $query->bindParam(':producto_id', $productoId, PDO::PARAM_INT);
+            $query->execute();
+            $categoriaId = $query->fetchColumn();
+            switch ($categoriaId) {
+                case "1": // Peces
+                    $query = $this->pdo->prepare("DELETE FROM peces WHERE producto_id = :producto_id");
+                    break;
+                case "2": // Acuarios
+                    $query = $this->pdo->prepare("DELETE FROM acuarios WHERE producto_id = :producto_id");
+                    break;
+                case "3": // Accesorios
+                    $query = $this->pdo->prepare("DELETE FROM accesorios WHERE producto_id = :producto_id");
+                    break;
+            }
+            $query->bindParam(':producto_id', $productoId, PDO::PARAM_INT);
+            $query->execute();
+            // Eliminar el producto general
+            $query = $this->pdo->prepare("DELETE FROM productos WHERE id_productos = :producto_id");
+            $query->bindParam(':producto_id', $productoId, PDO::PARAM_INT);
+            $query->execute();
+            $this->pdo->commit();
+            return true;
+        } catch (PDOException $e) {
+            $this->pdo->rollBack();
+            error_log("Eliminación de producto fallida: " . $e->getMessage());
+            throw $e;
+        }
+    }
 }
 ?>

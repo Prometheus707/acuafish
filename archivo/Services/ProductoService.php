@@ -71,5 +71,31 @@
         }
         return $producto;
     }
+
+    public function actualizarProducto($request) {
+        $productoId = $request['id_producto'] ?? null;
+        if (!$productoId) {
+            throw new Exception("ID de producto no especificado.");
+        }
+        $resultado = $this->ProductoModel->actualizarProducto($request, $productoId);
+        if ($resultado) {
+            return "Producto actualizado con éxito";
+        } else {
+            throw new Exception("Error al actualizar producto");
+        }
+    }
+
+    public function eliminarProducto($request) {
+        $productoId = $request['idProductoEliminar'] ?? null;
+        if (!$productoId) {
+            throw new Exception("ID de producto no especificado.");
+        }
+        $resultado = $this->ProductoModel->eliminarProducto($productoId);
+        if ($resultado) {
+            return "Producto eliminado con éxito";
+        } else {
+            throw new Exception("Error al eliminar producto");
+        }
+    }
  }
 ?> 

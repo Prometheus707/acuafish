@@ -14,10 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Productos</a>
+                    <a class="nav-link active" href="#">Productos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Ofertas</a>

@@ -1,8 +1,10 @@
 import {enviarProducto} from "./agregarProductos.js"
 import {cargarCategorias, mostrarSeccionEspecifica, cargarEspecies, cargarTipoPez, cargarTipoAccesorio} from "./select.js "
 import {listarProductos} from "./listarProductosMenu.js";
-import {inicializarEdicionProducto} from "./editarProducto.js";
+import {inicializarEdicionProducto, editarProducto} from "./editarProducto.js";
+import {eliminarProducto} from "./eliminarProducto.js";
 document.addEventListener("DOMContentLoaded", () => {
+    
     function limpiarFormularioProducto() {
         const modal = document.getElementById('modalNuevoProducto');
         // Limpia todos los campos generales
@@ -18,7 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('abrirModalAProducto').addEventListener('click', () => {
         limpiarFormularioProducto();
-       
+        const btnActualizar = document.getElementById('btnActualizarProducto');
+        const btnGuardarProducto = document.getElementById('btnGuardarProducto');
+        const urlImagen = document.getElementById('div_imagen_url');
+        const select_categoria = document.getElementById('categoria_id');
+        if(select_categoria){
+            select_categoria.disabled = false; 
+        }
+        if (urlImagen) {
+            urlImagen.classList.remove('d-none');
+        }
+        if (btnActualizar) {
+            btnActualizar.classList.add('d-none');
+        }
+        if (btnGuardarProducto) {
+            btnGuardarProducto.classList.remove('d-none');
+        }
     });
 
     //listar productos en el menu
@@ -48,16 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
         btnGuardarProducto.addEventListener('click', enviarProducto)
     };
 
-
-    document.getElementById('btnNuevoProducto').addEventListener('click', () => {
-        limpiarFormularioProducto();
-        const modal = new bootstrap.Modal(document.getElementById('modalNuevoProducto'));
-        modal.show();
-    });
-    
-   
-    //editar producto
     inicializarEdicionProducto();
+    //editar producto
+    const btnActualizarProducto = document.getElementById('btnActualizarProducto');
+    if(btnActualizarProducto){
+        btnActualizarProducto.addEventListener('click', editarProducto)
+    };
+
+    //eliminar producto
+    eliminarProducto();
 
 
 });
