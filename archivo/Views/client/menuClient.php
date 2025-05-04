@@ -28,65 +28,33 @@
 
         <!-- Cards de productos -->
         <div id="productosContainer" class="row row-cols-1 row-cols-md-3 g-4">
-            <!-- Ejemplo de producto, puedes repetir o generar dinámicamente -->
-            <div class="col producto-card" data-categoria="peces">
-                <div class="card h-100">
-                    <div class="bg-light" style="height: 150px;"></div>
-                    <div class="card-body">
-                        <h5 class="card-title">Pez Betta Azul</h5>
-                        <p class="card-text">Pez luchador de Siam con colores vibrantes.</p>
-                        <div class="d-flex justify-content-between">
-                            <span class="fw-bold">$14.99</span>
-                            <button class="btn btn-primary btn-sm">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col producto-card" data-categoria="acuarios">
-                <div class="card h-100">
-                    <div class="bg-light" style="height: 150px;"></div>
-                    <div class="card-body">
-                        <h5 class="card-title">Acuario 30L</h5>
-                        <p class="card-text">Kit completo con filtro e iluminación LED.</p>
-                        <div class="d-flex justify-content-between">
-                            <span class="fw-bold">$89.99</span>
-                            <button class="btn btn-primary btn-sm">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col producto-card" data-categoria="accesorios">
-                <div class="card h-100">
-                    <div class="bg-light" style="height: 150px;"></div>
-                    <div class="card-body">
-                        <h5 class="card-title">Planta Acuática</h5>
-                        <p class="card-text">Planta viva para decorar tu acuario.</p>
-                        <div class="d-flex justify-content-between">
-                            <span class="fw-bold">$8.99</span>
-                            <button class="btn btn-primary btn-sm">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
         </div>
+         <!-- Modal Carrito -->
+         <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCarritoLabel">Mi Carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="carritoContenido">
+                    <!-- Aquí se listan los productos del carrito con JS -->
+                </div>
+                <div class="modal-footer">
+                    <a href="carrito.php" class="btn btn-primary">Ver carrito completo</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+                </div>
+            </div>
+            </div>
     </div>
     <?php 
      require_once __DIR__ . '/../parcials/footer.php'; 
     ?>
     <script type="module" src="../../../herramientas/js/usuario/client/productos/productos.js"></script>
+    <script type="module" src="../../../herramientas/js/usuario/cerrarSesion.js"></script>
 
-    <script>
-    // Filtrado simple en el frontend
-    document.getElementById('categoriaSelect').addEventListener('change', function() {
-        const categoria = this.value;
-        document.querySelectorAll('.producto-card').forEach(card => {
-            if (categoria === 'todas' || card.dataset.categoria === categoria) {
-                card.style.display = '';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    });
-    </script>
+  
 </body>
 </html>

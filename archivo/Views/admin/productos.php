@@ -50,6 +50,7 @@
         </section>
     </div>
     <script type="module" src="../../../herramientas/js/usuario/admin/productos/productos.js"></script>
+    <script type="module" src="../../../herramientas/js/usuario/cerrarSesion.js"></script>
     <?php require_once __DIR__ . '/../modales/modales-productos.php'; ?>
     <?php require_once __DIR__ . '/../parcials/footer.php'; ?>
 </body>

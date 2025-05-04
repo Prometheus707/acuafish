@@ -30,5 +30,6 @@
     <?php 
      require_once __DIR__ . '/../parcials/footer.php'; 
     ?>
+    <script type="module" src="../../../herramientas/js/usuario/cerrarSesion.js"></script>
 </body>
 </html>

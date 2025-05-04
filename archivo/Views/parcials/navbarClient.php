@@ -14,7 +14,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Productos</a>
+                    <a class="nav-link " href="../client/menuClient.php">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="../client/carritoCompras.php">Carrito</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Ofertas</a>
@@ -37,12 +40,12 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user me-2"></i>Mi Perfil</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-heart me-2"></i>Favoritos</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-cart-shopping me-2"></i>Mis Compras</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item text-danger" href="#"><i class="fa-solid fa-right-from-bracket me-2"></i>Cerrar Sesión</a></li>
+                        <li><a class="dropdown-item text-danger" id="btnCerrarSesion"><i class="fa-solid fa-right-from-bracket me-2"></i>Cerrar Sesión</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
+
     </div>
 </nav>

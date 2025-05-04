@@ -8,6 +8,23 @@
             $this->pdo= $pdo;
         }
 
+        public function cambiarRol($request){
+            try {
+                $this->pdo->beginTransaction();
+                $query = $this->pdo->prepare("UPDATE usuarios SET rol_usuario = :rol WHERE id_usuario = :id");
+                $query->bindParam(':rol', $request['rol_nuevo'], PDO::PARAM_INT);
+                $query->bindParam(':id', $request['id_usuario'] , PDO::PARAM_INT);
+                $query->execute();
+                $this->pdo->commit();
+                return True;
+            }  
+            catch (PDOException $e) {
+                $this->pdo->rollBack();
+                error_log("Error al cambiar el rol: " . $e->getMessage());
+                throw $e;   
+            }
+        }
+
         public function registrarUsuario($request){
             try {
                 $this->pdo->beginTransaction();
@@ -50,5 +67,29 @@
                 throw new Exception("Error al autenticar usuario"); 
             }
         }
+
+        public function listarUsuarios(){
+            try{
+                $query = $this->pdo->prepare("SELECT * FROM usuarios");
+                $query->execute();
+                return $query->fetchAll(PDO::FETCH_ASSOC);
+            }catch(PDOException $e){
+                throw new Exception("Error al listar usuarios");
+            }
+        }
+
+        public function buscarUsuarios($request){
+            try{
+                $query = $this->pdo->prepare("SELECT * FROM usuarios WHERE nombre LIKE :letras OR email LIKE :letras");
+                $query->bindValue(':letras', '%'.$request['filtro'].'%', PDO::PARAM_STR);
+                $query->execute();
+                return $query->fetchAll(PDO::FETCH_ASSOC);
+            }
+            catch(PDOException $e){
+                throw new Exception("Error al buscar usuarios");
+            }
+        }
+
+
     }
 ?>

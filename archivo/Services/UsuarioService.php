@@ -7,6 +7,20 @@
         $this->usuarioModel = new UsuarioModel($pdo);
     }
 
+    public function cambiarRol($request){
+        $usuario = $this->usuarioModel->cambiarRol($request);
+    }
+
+    public function listarUsuarios() {
+        $usuarios = $this->usuarioModel->listarUsuarios();
+        return $usuarios;
+    }
+
+    public function buscarUsuarios($request) {
+        $usuarios = $this->usuarioModel->buscarUsuarios($request);
+        return $usuarios;
+    }
+
     public function registrarUsuario($request) {
         $this->validarRegistroUsuario($request);
         $request['password'] = password_hash($request['password'], PASSWORD_BCRYPT); 
@@ -22,7 +36,7 @@
             throw new Exception("El campo 'nombre' es obligatorio");
         }
         if (strlen($request['nombre']) > 50) {
-             throw new Exception("El nombre no puede superar 50 caracteres");
+            throw new Exception("El nombre no puede superar 50 caracteres");
         }
         if (empty($request['email'])) {
             throw new Exception("El campo 'correo' es obligatorio");
@@ -74,6 +88,50 @@
         }
         if (empty($request['password'])) {
             throw new Exception("El campo 'contraseña' es obligatorio");
+        }
+    }
+
+    public function cerrarSesion() {
+        try {
+            $sessionStatus = session_status();
+            
+            // Si las sesiones están deshabilitadas en el servidor
+            if ($sessionStatus === PHP_SESSION_DISABLED) {
+                throw new Exception('Las sesiones están deshabilitadas en esta configuración');
+            }
+    
+            // Si la sesión no está iniciada, iniciarla
+            if ($sessionStatus === PHP_SESSION_NONE) {
+                session_start();
+            }
+    
+            // Limpiar datos de sesión
+            $_SESSION = [];
+    
+            // Eliminar cookie de sesión
+            if (ini_get("session.use_cookies")) {
+                $params = session_get_cookie_params();
+                setcookie(
+                    session_name(), 
+                    '', 
+                    time() - 42000,
+                    $params["path"], 
+                    $params["domain"],
+                    $params["secure"], 
+                    $params["httponly"]
+                );
+            }
+    
+            // Destruir sesión
+            if (!session_destroy()) {
+                throw new Exception('Falló al destruir la sesión');
+            }
+    
+            return true;
+    
+        } catch (Exception $e) {
+            error_log('Error en cerrarSesion: ' . $e->getMessage());
+            return false;
         }
     }
  }

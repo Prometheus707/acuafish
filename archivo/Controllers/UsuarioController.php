@@ -42,6 +42,46 @@ class UsuarioController {
             return;
         }
     }
+
+    private function cerrarSesion($request) {
+        try {
+            $this->usuarioService->cerrarSesion();
+            ResponseHandler::success(null, 'Sesión cerrada con éxito');
+        } catch (Exception $e) {
+            ResponseHandler::error($e->getMessage());
+            return;
+        }
+    }
+
+    private function listarUsuarios($request) {
+        try {
+            $usuarios = $this->usuarioService->listarUsuarios();
+            ResponseHandler::success($usuarios, 'Usuarios listados con éxito');
+        } catch (Exception $e) {
+            ResponseHandler::error($e->getMessage());
+            return;
+        }
+    }
+
+    private function buscarUsuarios($request){
+        try {
+            $usuarios = $this->usuarioService->buscarUsuarios($request);
+            ResponseHandler::success($usuarios, 'Usuarios listados con éxito');
+        } catch (Exception $e) {
+            ResponseHandler::error($e->getMessage());
+            return;
+        }
+    }
+
+    private function cambiarRol($request){
+        try {
+            $this->usuarioService->cambiarRol($request);
+            ResponseHandler::success(null, 'Rol cambiado con éxito');
+        } catch (Exception $e) {
+            ResponseHandler::error($e->getMessage());
+            return;
+        }
+    }
 }
 $pdo = Database::getInstance()->getConnection();
 $usuarioService = new UsuarioService($pdo);

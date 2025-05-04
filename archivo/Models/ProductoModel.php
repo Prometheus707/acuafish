@@ -252,5 +252,17 @@ class ProductoModel {
             throw $e;
         }
     }
+
+    public function obtenerPrecioPorId($productoId) {
+        try {
+            $query = $this->pdo->prepare("SELECT precio FROM productos WHERE id_productos = :producto_id");
+            $query->bindParam(':producto_id', $productoId, PDO::PARAM_INT);
+            $query->execute();
+            return $query->fetchColumn();
+        } catch (PDOException $e) {
+            error_log("Error al obtener precio: " . $e->getMessage());
+            throw $e;
+        }
+    }
 }
 ?>
