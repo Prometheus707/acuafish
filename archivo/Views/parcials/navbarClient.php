@@ -19,12 +19,7 @@
                 <li class="nav-item">
                     <a class="nav-link " href="../client/carritoCompras.php">Carrito</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Ofertas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
-                </li>
+               
             </ul>
 
             <!-- Dropdown del usuario -->

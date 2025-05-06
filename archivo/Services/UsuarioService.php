@@ -1,5 +1,6 @@
 <?php
  require_once __DIR__ . '/../Models/UsuarioModel.php';
+ 
  class UsuarioService {
     private $usuarioModel;
 

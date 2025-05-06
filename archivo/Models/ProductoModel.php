@@ -9,8 +9,6 @@ class ProductoModel {
     public function registrarProducto($request) {
         try {
             $this->pdo->beginTransaction();
-    
-            // Insertar producto general
             $query = $this->pdo->prepare("
                 INSERT INTO productos (nombre, descripcion, precio, stock, categoria_id, imagen_url)
                 VALUES (:nombre, :descripcion, :precio, :stock, :categoria_id, :imagen_url)
@@ -22,9 +20,7 @@ class ProductoModel {
             $query->bindParam(':categoria_id', $request['categoria'], PDO::PARAM_INT);
             $query->bindParam(':imagen_url', $request['imagen_url'], PDO::PARAM_STR);
             $query->execute();
-    
             $producto_id = $this->pdo->lastInsertId();
-    
             switch ($request['categoria']) {
                 case "1": // Peces
                     $query = $this->pdo->prepare("
@@ -59,7 +55,6 @@ class ProductoModel {
                     $query->execute();
                     break;
             }
-    
             $this->pdo->commit();
             return true;
         } catch (PDOException $e) {

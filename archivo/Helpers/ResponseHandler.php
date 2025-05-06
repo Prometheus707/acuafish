@@ -1,4 +1,5 @@
 <?php
+// patron adapador
     class ResponseHandler {
         public static function success($data = null, $message = 'Operación exitosa') {
             echo json_encode([

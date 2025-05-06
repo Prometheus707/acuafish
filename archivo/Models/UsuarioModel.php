@@ -7,7 +7,8 @@
         {
             $this->pdo= $pdo;
         }
-
+        //DAO(Data Access Object)
+        //themplate method
         public function cambiarRol($request){
             try {
                 $this->pdo->beginTransaction();
@@ -89,7 +90,5 @@
                 throw new Exception("Error al buscar usuarios");
             }
         }
-
-
     }
 ?>

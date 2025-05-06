@@ -4,12 +4,13 @@ require_once __DIR__ . '/../Helpers/ResponseHandler.php';
 require_once __DIR__ . '/../Services/UsuarioService.php';
 class UsuarioController {
 
-    private $usuarioService;
-
+private $usuarioService;
+//inyeccion de dependencias
     public function __construct(UsuarioService $usuarioService) {
         $this->usuarioService = $usuarioService;
     }
 
+    //patron command
     public function handleRequest($request) {
         $action = $request['action'] ?? null;
         if (!$action) {

@@ -14,7 +14,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
-
 </head>
 <body class="text-white" style="<?php echo $varColorAplication; ?>">
     <div class="container">
@@ -31,8 +30,6 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto text-white text-center">
                             <li class="nav-item"><a class="nav-link" style="<?php echo $varColorLetra; ?>" href="https://www.google.com/maps">Ubicación</a></li>
-                            <li class="nav-item"><a class="nav-link" style="<?php echo $varColorLetra; ?>" href="archivo/views/paginas/home.php">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" style="<?php echo $varColorLetra; ?>" href="#">Promociones</a></li>
                         </ul>
                     </div>
                 </div>
