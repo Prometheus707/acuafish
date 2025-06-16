@@ -99,7 +99,7 @@
                     FROM pedidos
                     INNER JOIN detalle_pedidos ON detalle_pedidos.id_pedido_detalle = pedidos.id_pedido
                     INNER JOIN usuarios ON pedidos.id_cliente_pedido = usuarios.id_usuario"
-                );
+                ); 
                 $query->execute();
                 return $query->fetchAll(\PDO::FETCH_ASSOC);
             } catch (\PDOException $e) {

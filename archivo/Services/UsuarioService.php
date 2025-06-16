@@ -1,5 +1,10 @@
 <?php
  require_once __DIR__ . '/../Models/UsuarioModel.php';
+ require_once __DIR__ . '/../Libs/PHPMailer-master/src/PHPMailer.php';
+ require_once __DIR__ . '/../Libs/PHPMailer-master/src/SMTP.php';
+ require_once __DIR__ . '/../Libs/PHPMailer-master/src/Exception.php';
+ use PHPMailer\PHPMailer\PHPMailer;
+ use PHPMailer\PHPMailer\Exception;
  
  class UsuarioService {
     private $usuarioModel;
@@ -135,5 +140,76 @@
             return false;
         }
     }
+
+    public function recuperarContrasena($request){
+        $this->validarRecuperarContrasena($request);
+        $usuario = $this->usuarioModel->recuperarContrasena($request);
+        if (!$usuario) {
+            throw new Exception("No se encontró un usuario con ese correo");
+        }
+        $nuevaContrasena = $this->generarContrasenaAleatoria();
+        $nuevaContrasenaHash = password_hash($nuevaContrasena, PASSWORD_BCRYPT);
+        $this->usuarioModel->actualizarContrasena([
+            'password' => $nuevaContrasenaHash,
+            'email' => $usuario['email']
+        ]);
+        $this->enviarCorreoRecuperacion($usuario['email'], $nuevaContrasena);
+        return "Se ha enviado una nueva contraseña a tu correo";    
+    }
+
+    public function validarRecuperarContrasena($request){
+        if (empty($request['email'])) {
+            throw new Exception("El campo 'correo' es obligatorio");
+        }
+        if (!filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
+            throw new Exception("El correo no tiene un formato válido");
+        }
+    }
+
+    private function generarContrasenaAleatoria(){
+        return bin2hex(random_bytes(4)); // 8 caracteres hexadecimales aleatorios
+    }
+
+    private function enviarCorreoRecuperacion($email, $nuevaContrasena){
+        $mail = new PHPMailer(true);
+        try {
+            // Configuración del servidor SMTP
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'alexis.once.rcsj@gmail.com'; // Cambia por tu correo real
+            $mail->Password = 'eexa tite xldh nubb'; // Cambia por tu contraseña de aplicación de Gmail
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+    
+            // Remitente y destinatario
+            $mail->setFrom('TU_CORREO@gmail.com', 'Soporte Peces');
+            $mail->addAddress($email);
+    
+            // Contenido del correo
+            $mail->isHTML(true); // Cambiado a HTML
+            $mail->Subject = 'Recuperación de contraseña';
+            $mail->Body    = '
+                <div style="font-family: Arial, sans-serif; background: #f4f4f4; padding: 30px;">
+                    <div style="max-width: 500px; margin: auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); padding: 30px;">
+                        <h2 style="color: #007bff; text-align: center;">Recuperación de contraseña</h2>
+                        <p>Hola,</p>
+                        <p>Hemos recibido una solicitud para restablecer tu contraseña. Tu nueva contraseña es:</p>
+                        <div style="background: #e9ecef; border-radius: 5px; padding: 15px; text-align: center; font-size: 1.3em; letter-spacing: 2px; margin: 20px 0;">
+                            <strong>' . htmlspecialchars($nuevaContrasena) . '</strong>
+                        </div>
+                        <p>Te recomendamos cambiar esta contraseña después de iniciar sesión.</p>
+                        <p style="color: #888; font-size: 0.9em;">Si no solicitaste este cambio, puedes ignorar este correo.</p>
+                        <hr>
+                        <p style="text-align: center; color: #aaa; font-size: 0.9em;">&copy; ' . date('Y') . ' Soporte Peces</p>
+                    </div>
+                </div>
+            ';
+    
+            $mail->send();
+        } catch (Exception $e) {
+            throw new Exception('No se pudo enviar el correo. Error: ' . $mail->ErrorInfo);
+        }
+    }
  }
-?> 
+?>

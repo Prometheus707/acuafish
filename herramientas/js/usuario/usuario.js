@@ -1,5 +1,6 @@
 import { registrarUsuario } from "./registroUsuario.js";
 import { loginUsuario } from "./loginUsuario.js";
+import { recuperarContrasena } from "./recuperarConstrasena.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const btnGuardarUsuario = document.querySelector("#btnRegistrarUsuario");
@@ -14,6 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
     //INICIAR SESION
     if(btnIniciarSesion){
         btnIniciarSesion.addEventListener("click", loginUsuario)
+    }
+
+    //RECUPERAR CONTRASEÑA
+    const btnRecuperarContrasena = document.querySelector("#btnRecuperarContrasena");
+    if(btnRecuperarContrasena){
+        // btnRecuperarContrasena.addEventListener("click", () => {
+        //     iziToast.warning({ title: 'Recuperar Contraseña', message: 'Por favor, ingrese su correo electrónico para recuperar su contraseña.' });
+        // });
+        btnRecuperarContrasena.addEventListener("click", recuperarContrasena)
     }
    
 });

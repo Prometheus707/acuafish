@@ -83,6 +83,17 @@ private $usuarioService;
             return;
         }
     }
+
+    private function recuperarContrasena($request){
+        try {
+            $this->usuarioService->recuperarContrasena($request);
+            ResponseHandler::success(null, 'Contraseña recuperada con éxito');            
+        }
+        catch (Exception $e) {
+            ResponseHandler::error($e->getMessage());
+            return;
+        }
+    }
 }
 $pdo = Database::getInstance()->getConnection();
 $usuarioService = new UsuarioService($pdo);

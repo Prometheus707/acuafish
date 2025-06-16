@@ -259,5 +259,18 @@ class ProductoModel {
             throw $e;
         }
     }
+
+    public function actualizarStock($productoId, $cantidad) {
+        try {
+            $query = $this->pdo->prepare("UPDATE productos SET stock = stock - :stock WHERE id_productos = :producto_id");
+            $query->bindValue(':stock', $cantidad, PDO::PARAM_INT);
+            $query->bindParam(':producto_id', $productoId, PDO::PARAM_INT);
+            $query->execute();
+            return true;
+        } catch (PDOException $e) {
+            error_log("Mermado de producto fallido: ". $e->getMessage());
+            throw $e;   
+        }
+    }
 }
 ?>

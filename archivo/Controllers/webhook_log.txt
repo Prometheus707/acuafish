@@ -1,0 +1,1335 @@
+{"action":"payment.created","api_version":"v1","data":{"id":"1323381056"},"date_created":"2025-05-17T03:07:57Z","id":121405988788,"live_mode":false,"type":"payment","user_id":"508877378"}
+Respuesta de la API: {"accounts_info":null,"acquirer_reconciliation":[],"additional_info":{"ip_address":"190.90.138.114","items":[{"quantity":"1","title":"Pedido de prueba","unit_price":"120000"}],"tracking_id":"platform:v1-whitelabel,so:ALL,type:N/A,security:none"},"authorization_code":"301299","binary_mode":false,"brand_id":null,"build_version":"3.105.0-rc-8","call_for_authorize_id":null,"captured":true,"card":{"cardholder":{"identification":{"number":"123456789","type":"CC"},"name":"APRO"},"country":"TUR","date_created":"2025-05-16T23:07:57.000-04:00","date_last_updated":"2025-05-16T23:07:57.000-04:00","expiration_month":11,"expiration_year":2030,"first_six_digits":"525413","id":null,"last_four_digits":"3564","tags":["credit"]},"charges_details":[{"accounts":{"from":"collector","to":"mp"},"amounts":{"original":5656,"refunded":0},"client_id":0,"date_created":"2025-05-16T23:07:57.000-04:00","id":"1323381056-001","last_updated":"2025-05-16T23:07:57.000-04:00","metadata":{"source":"rule-engine"},"name":"mercadopago_fee","refund_charges":[],"reserve_id":null,"type":"fee"}],"charges_execution_info":{"internal_execution":{"date":"2025-05-16T23:07:57.904-04:00","execution_id":"01JVE3CWGY0W20XWKKF6V2V54B"}},"collector_id":508877378,"corporation_id":null,"counter_currency":null,"coupon_amount":0,"currency_id":"COP","date_approved":"2025-05-16T23:07:58.276-04:00","date_created":"2025-05-16T23:07:57.914-04:00","date_last_updated":"2025-05-16T23:07:58.276-04:00","date_of_expiration":"2025-05-19T23:07:57.585-04:00","deduction_schema":null,"description":"Pedido de prueba","differential_pricing_id":null,"external_reference":"13","fee_details":[{"amount":5656,"fee_payer":"collector","type":"mercadopago_fee"}],"financing_group":null,"id":1323381056,"installments":1,"integrator_id":null,"issuer_id":"204","live_mode":false,"marketplace_owner":null,"merchant_account_id":null,"merchant_number":null,"metadata":{},"money_release_date":"2025-05-16T23:07:58.276-04:00","money_release_schema":null,"money_release_status":"released","net_amount":120000,"notification_url":null,"operation_type":"regular_payment","order":{"id":"31092503640","type":"mercadopago"},"payer":{"identification":{"number":"32659430","type":"DNI"},"entity_type":null,"phone":{"number":null,"extension":null,"area_code":null},"last_name":null,"id":"2439597953","type":null,"first_name":null,"email":"test_user_80507629@testuser.com"},"payment_method":{"data":{"routing_data":{"merchant_account_id":"21878194"}},"id":"master","issuer_id":"204","type":"credit_card"},"payment_method_id":"master","payment_type_id":"credit_card","platform_id":null,"point_of_interaction":{"application_data":{"name":"checkout-off","operating_system":null,"version":"v2"},"business_info":{"branch":"Merchant Services","sub_unit":"checkout_pro","unit":"online_payments"},"transaction_data":{"e2e_id":null},"type":"CHECKOUT"},"pos_id":null,"processing_mode":"aggregator","refunds":[],"release_info":null,"shipping_amount":0,"sponsor_id":null,"statement_descriptor":"Mercadopago*fake","status":"approved","status_detail":"accredited","store_id":null,"tags":null,"taxes":[{"type":"IVA","value":0}],"taxes_amount":0,"transaction_amount":120000,"transaction_amount_refunded":0,"transaction_details":{"acquirer_reference":null,"external_resource_url":null,"financial_institution":null,"installment_amount":120000,"net_received_amount":112047,"overpaid_amount":0,"payable_deferral_period":null,"payment_method_reference_id":null,"total_paid_amount":120000}}
+Objeto payment: stdClass Object
+(
+    [accounts_info] => 
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => stdClass Object
+        (
+            [ip_address] => 190.90.138.114
+            [items] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [quantity] => 1
+                            [title] => Pedido de prueba
+                            [unit_price] => 120000
+                        )
+
+                )
+
+            [tracking_id] => platform:v1-whitelabel,so:ALL,type:N/A,security:none
+        )
+
+    [authorization_code] => 301299
+    [binary_mode] => 
+    [brand_id] => 
+    [build_version] => 3.105.0-rc-8
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => stdClass Object
+        (
+            [cardholder] => stdClass Object
+                (
+                    [identification] => stdClass Object
+                        (
+                            [number] => 123456789
+                            [type] => CC
+                        )
+
+                    [name] => APRO
+                )
+
+            [country] => TUR
+            [date_created] => 2025-05-16T23:07:57.000-04:00
+            [date_last_updated] => 2025-05-16T23:07:57.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2030
+            [first_six_digits] => 525413
+            [id] => 
+            [last_four_digits] => 3564
+            [tags] => Array
+                (
+                    [0] => credit
+                )
+
+        )
+
+    [charges_details] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [accounts] => stdClass Object
+                        (
+                            [from] => collector
+                            [to] => mp
+                        )
+
+                    [amounts] => stdClass Object
+                        (
+                            [original] => 5656
+                            [refunded] => 0
+                        )
+
+                    [client_id] => 0
+                    [date_created] => 2025-05-16T23:07:57.000-04:00
+                    [id] => 1323381056-001
+                    [last_updated] => 2025-05-16T23:07:57.000-04:00
+                    [metadata] => stdClass Object
+                        (
+                            [source] => rule-engine
+                        )
+
+                    [name] => mercadopago_fee
+                    [refund_charges] => Array
+                        (
+                        )
+
+                    [reserve_id] => 
+                    [type] => fee
+                )
+
+        )
+
+    [charges_execution_info] => stdClass Object
+        (
+            [internal_execution] => stdClass Object
+                (
+                    [date] => 2025-05-16T23:07:57.904-04:00
+                    [execution_id] => 01JVE3CWGY0W20XWKKF6V2V54B
+                )
+
+        )
+
+    [collector_id] => 508877378
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => COP
+    [date_approved] => 2025-05-16T23:07:58.276-04:00
+    [date_created] => 2025-05-16T23:07:57.914-04:00
+    [date_last_updated] => 2025-05-16T23:07:58.276-04:00
+    [date_of_expiration] => 2025-05-19T23:07:57.585-04:00
+    [deduction_schema] => 
+    [description] => Pedido de prueba
+    [differential_pricing_id] => 
+    [external_reference] => 13
+    [fee_details] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [amount] => 5656
+                    [fee_payer] => collector
+                    [type] => mercadopago_fee
+                )
+
+        )
+
+    [financing_group] => 
+    [id] => 1323381056
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 204
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => stdClass Object
+        (
+        )
+
+    [money_release_date] => 2025-05-16T23:07:58.276-04:00
+    [money_release_schema] => 
+    [money_release_status] => released
+    [net_amount] => 120000
+    [notification_url] => 
+    [operation_type] => regular_payment
+    [order] => stdClass Object
+        (
+            [id] => 31092503640
+            [type] => mercadopago
+        )
+
+    [payer] => stdClass Object
+        (
+            [identification] => stdClass Object
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [entity_type] => 
+            [phone] => stdClass Object
+                (
+                    [number] => 
+                    [extension] => 
+                    [area_code] => 
+                )
+
+            [last_name] => 
+            [id] => 2439597953
+            [type] => 
+            [first_name] => 
+            [email] => test_user_80507629@testuser.com
+        )
+
+    [payment_method] => stdClass Object
+        (
+            [data] => stdClass Object
+                (
+                    [routing_data] => stdClass Object
+                        (
+                            [merchant_account_id] => 21878194
+                        )
+
+                )
+
+            [id] => master
+            [issuer_id] => 204
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => stdClass Object
+        (
+            [application_data] => stdClass Object
+                (
+                    [name] => checkout-off
+                    [operating_system] => 
+                    [version] => v2
+                )
+
+            [business_info] => stdClass Object
+                (
+                    [branch] => Merchant Services
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [transaction_data] => stdClass Object
+                (
+                    [e2e_id] => 
+                )
+
+            [type] => CHECKOUT
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [release_info] => 
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => Mercadopago*fake
+    [status] => approved
+    [status_detail] => accredited
+    [store_id] => 
+    [tags] => 
+    [taxes] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [type] => IVA
+                    [value] => 0
+                )
+
+        )
+
+    [taxes_amount] => 0
+    [transaction_amount] => 120000
+    [transaction_amount_refunded] => 0
+    [transaction_details] => stdClass Object
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 120000
+            [net_received_amount] => 112047
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 120000
+        )
+
+)
+
+Entró a pago aprobado
+external_reference: 13
+{"action":"payment.created","api_version":"v1","data":{"id":"1336184531"},"date_created":"2025-05-17T03:27:01Z","id":121335567769,"live_mode":false,"type":"payment","user_id":"508877378"}
+Respuesta de la API: {"accounts_info":null,"acquirer_reconciliation":[],"additional_info":{"ip_address":"190.90.138.114","items":[{"quantity":"1","title":"Pedido de prueba","unit_price":"120000"}],"tracking_id":"platform:v1-whitelabel,so:ALL,type:N/A,security:none"},"authorization_code":"301299","binary_mode":false,"brand_id":null,"build_version":"3.105.0-rc-8","call_for_authorize_id":null,"captured":true,"card":{"cardholder":{"identification":{"number":"123456789","type":"CC"},"name":"APRO"},"country":"TUR","date_created":"2025-05-16T23:27:01.000-04:00","date_last_updated":"2025-05-16T23:27:01.000-04:00","expiration_month":11,"expiration_year":2030,"first_six_digits":"525413","id":null,"last_four_digits":"3564","tags":["credit"]},"charges_details":[{"accounts":{"from":"collector","to":"mp"},"amounts":{"original":5656,"refunded":0},"client_id":0,"date_created":"2025-05-16T23:27:01.000-04:00","id":"1336184531-001","last_updated":"2025-05-16T23:27:01.000-04:00","metadata":{"source":"rule-engine"},"name":"mercadopago_fee","refund_charges":[],"reserve_id":null,"type":"fee"}],"charges_execution_info":{"internal_execution":{"date":"2025-05-16T23:27:01.543-04:00","execution_id":"01JVE4FSBM7PNPHWAQ8NRZP7SZ"}},"collector_id":508877378,"corporation_id":null,"counter_currency":null,"coupon_amount":0,"currency_id":"COP","date_approved":"2025-05-16T23:27:02.007-04:00","date_created":"2025-05-16T23:27:01.557-04:00","date_last_updated":"2025-05-16T23:27:02.007-04:00","date_of_expiration":"2025-05-19T23:27:01.214-04:00","deduction_schema":null,"description":"Pedido de prueba","differential_pricing_id":null,"external_reference":"13","fee_details":[{"amount":5656,"fee_payer":"collector","type":"mercadopago_fee"}],"financing_group":null,"id":1336184531,"installments":1,"integrator_id":null,"issuer_id":"204","live_mode":false,"marketplace_owner":null,"merchant_account_id":null,"merchant_number":null,"metadata":{},"money_release_date":"2025-05-16T23:27:02.007-04:00","money_release_schema":null,"money_release_status":"released","net_amount":120000,"notification_url":null,"operation_type":"regular_payment","order":{"id":"31092725790","type":"mercadopago"},"payer":{"identification":{"number":"32659430","type":"DNI"},"entity_type":null,"phone":{"number":null,"extension":null,"area_code":null},"last_name":null,"id":"2439597953","type":null,"first_name":null,"email":"test_user_80507629@testuser.com"},"payment_method":{"data":{"routing_data":{"merchant_account_id":"21878194"}},"id":"master","issuer_id":"204","type":"credit_card"},"payment_method_id":"master","payment_type_id":"credit_card","platform_id":null,"point_of_interaction":{"application_data":{"name":"checkout-off","operating_system":null,"version":"v2"},"business_info":{"branch":"Merchant Services","sub_unit":"checkout_pro","unit":"online_payments"},"transaction_data":{"e2e_id":null},"type":"CHECKOUT"},"pos_id":null,"processing_mode":"aggregator","refunds":[],"release_info":null,"shipping_amount":0,"sponsor_id":null,"statement_descriptor":"Mercadopago*fake","status":"approved","status_detail":"accredited","store_id":null,"tags":null,"taxes":[{"type":"IVA","value":0}],"taxes_amount":0,"transaction_amount":120000,"transaction_amount_refunded":0,"transaction_details":{"acquirer_reference":null,"external_resource_url":null,"financial_institution":null,"installment_amount":120000,"net_received_amount":112047,"overpaid_amount":0,"payable_deferral_period":null,"payment_method_reference_id":null,"total_paid_amount":120000}}
+Objeto payment: stdClass Object
+(
+    [accounts_info] => 
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => stdClass Object
+        (
+            [ip_address] => 190.90.138.114
+            [items] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [quantity] => 1
+                            [title] => Pedido de prueba
+                            [unit_price] => 120000
+                        )
+
+                )
+
+            [tracking_id] => platform:v1-whitelabel,so:ALL,type:N/A,security:none
+        )
+
+    [authorization_code] => 301299
+    [binary_mode] => 
+    [brand_id] => 
+    [build_version] => 3.105.0-rc-8
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => stdClass Object
+        (
+            [cardholder] => stdClass Object
+                (
+                    [identification] => stdClass Object
+                        (
+                            [number] => 123456789
+                            [type] => CC
+                        )
+
+                    [name] => APRO
+                )
+
+            [country] => TUR
+            [date_created] => 2025-05-16T23:27:01.000-04:00
+            [date_last_updated] => 2025-05-16T23:27:01.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2030
+            [first_six_digits] => 525413
+            [id] => 
+            [last_four_digits] => 3564
+            [tags] => Array
+                (
+                    [0] => credit
+                )
+
+        )
+
+    [charges_details] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [accounts] => stdClass Object
+                        (
+                            [from] => collector
+                            [to] => mp
+                        )
+
+                    [amounts] => stdClass Object
+                        (
+                            [original] => 5656
+                            [refunded] => 0
+                        )
+
+                    [client_id] => 0
+                    [date_created] => 2025-05-16T23:27:01.000-04:00
+                    [id] => 1336184531-001
+                    [last_updated] => 2025-05-16T23:27:01.000-04:00
+                    [metadata] => stdClass Object
+                        (
+                            [source] => rule-engine
+                        )
+
+                    [name] => mercadopago_fee
+                    [refund_charges] => Array
+                        (
+                        )
+
+                    [reserve_id] => 
+                    [type] => fee
+                )
+
+        )
+
+    [charges_execution_info] => stdClass Object
+        (
+            [internal_execution] => stdClass Object
+                (
+                    [date] => 2025-05-16T23:27:01.543-04:00
+                    [execution_id] => 01JVE4FSBM7PNPHWAQ8NRZP7SZ
+                )
+
+        )
+
+    [collector_id] => 508877378
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => COP
+    [date_approved] => 2025-05-16T23:27:02.007-04:00
+    [date_created] => 2025-05-16T23:27:01.557-04:00
+    [date_last_updated] => 2025-05-16T23:27:02.007-04:00
+    [date_of_expiration] => 2025-05-19T23:27:01.214-04:00
+    [deduction_schema] => 
+    [description] => Pedido de prueba
+    [differential_pricing_id] => 
+    [external_reference] => 13
+    [fee_details] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [amount] => 5656
+                    [fee_payer] => collector
+                    [type] => mercadopago_fee
+                )
+
+        )
+
+    [financing_group] => 
+    [id] => 1336184531
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 204
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => stdClass Object
+        (
+        )
+
+    [money_release_date] => 2025-05-16T23:27:02.007-04:00
+    [money_release_schema] => 
+    [money_release_status] => released
+    [net_amount] => 120000
+    [notification_url] => 
+    [operation_type] => regular_payment
+    [order] => stdClass Object
+        (
+            [id] => 31092725790
+            [type] => mercadopago
+        )
+
+    [payer] => stdClass Object
+        (
+            [identification] => stdClass Object
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [entity_type] => 
+            [phone] => stdClass Object
+                (
+                    [number] => 
+                    [extension] => 
+                    [area_code] => 
+                )
+
+            [last_name] => 
+            [id] => 2439597953
+            [type] => 
+            [first_name] => 
+            [email] => test_user_80507629@testuser.com
+        )
+
+    [payment_method] => stdClass Object
+        (
+            [data] => stdClass Object
+                (
+                    [routing_data] => stdClass Object
+                        (
+                            [merchant_account_id] => 21878194
+                        )
+
+                )
+
+            [id] => master
+            [issuer_id] => 204
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => stdClass Object
+        (
+            [application_data] => stdClass Object
+                (
+                    [name] => checkout-off
+                    [operating_system] => 
+                    [version] => v2
+                )
+
+            [business_info] => stdClass Object
+                (
+                    [branch] => Merchant Services
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [transaction_data] => stdClass Object
+                (
+                    [e2e_id] => 
+                )
+
+            [type] => CHECKOUT
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [release_info] => 
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => Mercadopago*fake
+    [status] => approved
+    [status_detail] => accredited
+    [store_id] => 
+    [tags] => 
+    [taxes] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [type] => IVA
+                    [value] => 0
+                )
+
+        )
+
+    [taxes_amount] => 0
+    [transaction_amount] => 120000
+    [transaction_amount_refunded] => 0
+    [transaction_details] => stdClass Object
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 120000
+            [net_received_amount] => 112047
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 120000
+        )
+
+)
+
+Entró a pago aprobado
+external_reference: 13
+{"action":"payment.created","api_version":"v1","data":{"id":"1323381170"},"date_created":"2025-05-17T03:41:32Z","id":121406502806,"live_mode":false,"type":"payment","user_id":"508877378"}
+Respuesta de la API: {"accounts_info":null,"acquirer_reconciliation":[],"additional_info":{"ip_address":"190.90.138.114","items":[{"quantity":"1","title":"Pedido de prueba","unit_price":"120000"}],"tracking_id":"platform:v1-whitelabel,so:ALL,type:N/A,security:none"},"authorization_code":"301299","binary_mode":false,"brand_id":null,"build_version":"3.105.0-rc-8","call_for_authorize_id":null,"captured":true,"card":{"cardholder":{"identification":{"number":"123456789","type":"CC"},"name":"APRO"},"country":"TUR","date_created":"2025-05-16T23:41:32.000-04:00","date_last_updated":"2025-05-16T23:41:32.000-04:00","expiration_month":11,"expiration_year":2030,"first_six_digits":"525413","id":null,"last_four_digits":"3564","tags":["credit"]},"charges_details":[{"accounts":{"from":"collector","to":"mp"},"amounts":{"original":5656,"refunded":0},"client_id":0,"date_created":"2025-05-16T23:41:32.000-04:00","id":"1323381170-001","last_updated":"2025-05-16T23:41:32.000-04:00","metadata":{"source":"rule-engine"},"name":"mercadopago_fee","refund_charges":[],"reserve_id":null,"type":"fee"}],"charges_execution_info":{"internal_execution":{"date":"2025-05-16T23:41:32.462-04:00","execution_id":"01JVE5ABVW0RKC4Y21BJCZT5HJ"}},"collector_id":508877378,"corporation_id":null,"counter_currency":null,"coupon_amount":0,"currency_id":"COP","date_approved":"2025-05-16T23:41:32.865-04:00","date_created":"2025-05-16T23:41:32.483-04:00","date_last_updated":"2025-05-16T23:41:32.865-04:00","date_of_expiration":"2025-05-19T23:41:32.160-04:00","deduction_schema":null,"description":"Pedido de prueba","differential_pricing_id":null,"external_reference":"13","fee_details":[{"amount":5656,"fee_payer":"collector","type":"mercadopago_fee"}],"financing_group":null,"id":1323381170,"installments":1,"integrator_id":null,"issuer_id":"204","live_mode":false,"marketplace_owner":null,"merchant_account_id":null,"merchant_number":null,"metadata":{},"money_release_date":"2025-05-16T23:41:32.865-04:00","money_release_schema":null,"money_release_status":"released","net_amount":120000,"notification_url":null,"operation_type":"regular_payment","order":{"id":"31071588239","type":"mercadopago"},"payer":{"identification":{"number":"32659430","type":"DNI"},"entity_type":null,"phone":{"number":null,"extension":null,"area_code":null},"last_name":null,"id":"2439597953","type":null,"first_name":null,"email":"test_user_80507629@testuser.com"},"payment_method":{"data":{"routing_data":{"merchant_account_id":"21878194"}},"id":"master","issuer_id":"204","type":"credit_card"},"payment_method_id":"master","payment_type_id":"credit_card","platform_id":null,"point_of_interaction":{"application_data":{"name":"checkout-off","operating_system":null,"version":"v2"},"business_info":{"branch":"Merchant Services","sub_unit":"checkout_pro","unit":"online_payments"},"transaction_data":{"e2e_id":null},"type":"CHECKOUT"},"pos_id":null,"processing_mode":"aggregator","refunds":[],"release_info":null,"shipping_amount":0,"sponsor_id":null,"statement_descriptor":"Mercadopago*fake","status":"approved","status_detail":"accredited","store_id":null,"tags":null,"taxes":[{"type":"IVA","value":0}],"taxes_amount":0,"transaction_amount":120000,"transaction_amount_refunded":0,"transaction_details":{"acquirer_reference":null,"external_resource_url":null,"financial_institution":null,"installment_amount":120000,"net_received_amount":112047,"overpaid_amount":0,"payable_deferral_period":null,"payment_method_reference_id":null,"total_paid_amount":120000}}
+Objeto payment: stdClass Object
+(
+    [accounts_info] => 
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => stdClass Object
+        (
+            [ip_address] => 190.90.138.114
+            [items] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [quantity] => 1
+                            [title] => Pedido de prueba
+                            [unit_price] => 120000
+                        )
+
+                )
+
+            [tracking_id] => platform:v1-whitelabel,so:ALL,type:N/A,security:none
+        )
+
+    [authorization_code] => 301299
+    [binary_mode] => 
+    [brand_id] => 
+    [build_version] => 3.105.0-rc-8
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => stdClass Object
+        (
+            [cardholder] => stdClass Object
+                (
+                    [identification] => stdClass Object
+                        (
+                            [number] => 123456789
+                            [type] => CC
+                        )
+
+                    [name] => APRO
+                )
+
+            [country] => TUR
+            [date_created] => 2025-05-16T23:41:32.000-04:00
+            [date_last_updated] => 2025-05-16T23:41:32.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2030
+            [first_six_digits] => 525413
+            [id] => 
+            [last_four_digits] => 3564
+            [tags] => Array
+                (
+                    [0] => credit
+                )
+
+        )
+
+    [charges_details] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [accounts] => stdClass Object
+                        (
+                            [from] => collector
+                            [to] => mp
+                        )
+
+                    [amounts] => stdClass Object
+                        (
+                            [original] => 5656
+                            [refunded] => 0
+                        )
+
+                    [client_id] => 0
+                    [date_created] => 2025-05-16T23:41:32.000-04:00
+                    [id] => 1323381170-001
+                    [last_updated] => 2025-05-16T23:41:32.000-04:00
+                    [metadata] => stdClass Object
+                        (
+                            [source] => rule-engine
+                        )
+
+                    [name] => mercadopago_fee
+                    [refund_charges] => Array
+                        (
+                        )
+
+                    [reserve_id] => 
+                    [type] => fee
+                )
+
+        )
+
+    [charges_execution_info] => stdClass Object
+        (
+            [internal_execution] => stdClass Object
+                (
+                    [date] => 2025-05-16T23:41:32.462-04:00
+                    [execution_id] => 01JVE5ABVW0RKC4Y21BJCZT5HJ
+                )
+
+        )
+
+    [collector_id] => 508877378
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => COP
+    [date_approved] => 2025-05-16T23:41:32.865-04:00
+    [date_created] => 2025-05-16T23:41:32.483-04:00
+    [date_last_updated] => 2025-05-16T23:41:32.865-04:00
+    [date_of_expiration] => 2025-05-19T23:41:32.160-04:00
+    [deduction_schema] => 
+    [description] => Pedido de prueba
+    [differential_pricing_id] => 
+    [external_reference] => 13
+    [fee_details] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [amount] => 5656
+                    [fee_payer] => collector
+                    [type] => mercadopago_fee
+                )
+
+        )
+
+    [financing_group] => 
+    [id] => 1323381170
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 204
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => stdClass Object
+        (
+        )
+
+    [money_release_date] => 2025-05-16T23:41:32.865-04:00
+    [money_release_schema] => 
+    [money_release_status] => released
+    [net_amount] => 120000
+    [notification_url] => 
+    [operation_type] => regular_payment
+    [order] => stdClass Object
+        (
+            [id] => 31071588239
+            [type] => mercadopago
+        )
+
+    [payer] => stdClass Object
+        (
+            [identification] => stdClass Object
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [entity_type] => 
+            [phone] => stdClass Object
+                (
+                    [number] => 
+                    [extension] => 
+                    [area_code] => 
+                )
+
+            [last_name] => 
+            [id] => 2439597953
+            [type] => 
+            [first_name] => 
+            [email] => test_user_80507629@testuser.com
+        )
+
+    [payment_method] => stdClass Object
+        (
+            [data] => stdClass Object
+                (
+                    [routing_data] => stdClass Object
+                        (
+                            [merchant_account_id] => 21878194
+                        )
+
+                )
+
+            [id] => master
+            [issuer_id] => 204
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => stdClass Object
+        (
+            [application_data] => stdClass Object
+                (
+                    [name] => checkout-off
+                    [operating_system] => 
+                    [version] => v2
+                )
+
+            [business_info] => stdClass Object
+                (
+                    [branch] => Merchant Services
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [transaction_data] => stdClass Object
+                (
+                    [e2e_id] => 
+                )
+
+            [type] => CHECKOUT
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [release_info] => 
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => Mercadopago*fake
+    [status] => approved
+    [status_detail] => accredited
+    [store_id] => 
+    [tags] => 
+    [taxes] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [type] => IVA
+                    [value] => 0
+                )
+
+        )
+
+    [taxes_amount] => 0
+    [transaction_amount] => 120000
+    [transaction_amount_refunded] => 0
+    [transaction_details] => stdClass Object
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 120000
+            [net_received_amount] => 112047
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 120000
+        )
+
+)
+
+Entró a pago aprobado
+external_reference: 13
+{"action":"payment.created","api_version":"v1","data":{"id":"1336184619"},"date_created":"2025-05-17T03:45:42Z","id":121335862279,"live_mode":false,"type":"payment","user_id":"508877378"}
+Respuesta de la API: {"accounts_info":null,"acquirer_reconciliation":[],"additional_info":{"ip_address":"190.90.138.114","items":[{"quantity":"1","title":"Pedido de prueba","unit_price":"120000"}],"tracking_id":"platform:v1-whitelabel,so:ALL,type:N/A,security:none"},"authorization_code":"301299","binary_mode":false,"brand_id":null,"build_version":"3.105.0-rc-8","call_for_authorize_id":null,"captured":true,"card":{"cardholder":{"identification":{"number":"123456789","type":"CC"},"name":"APRO"},"country":"TUR","date_created":"2025-05-16T23:45:42.000-04:00","date_last_updated":"2025-05-16T23:45:42.000-04:00","expiration_month":11,"expiration_year":2030,"first_six_digits":"525413","id":null,"last_four_digits":"3564","tags":["credit"]},"charges_details":[{"accounts":{"from":"collector","to":"mp"},"amounts":{"original":5656,"refunded":0},"client_id":0,"date_created":"2025-05-16T23:45:42.000-04:00","id":"1336184619-001","last_updated":"2025-05-16T23:45:42.000-04:00","metadata":{"source":"rule-engine"},"name":"mercadopago_fee","refund_charges":[],"reserve_id":null,"type":"fee"}],"charges_execution_info":{"internal_execution":{"date":"2025-05-16T23:45:42.186-04:00","execution_id":"01JVE5HZQSS9AW5QYVFSY434XE"}},"collector_id":508877378,"corporation_id":null,"counter_currency":null,"coupon_amount":0,"currency_id":"COP","date_approved":"2025-05-16T23:45:42.553-04:00","date_created":"2025-05-16T23:45:42.189-04:00","date_last_updated":"2025-05-16T23:45:42.553-04:00","date_of_expiration":"2025-05-19T23:45:41.907-04:00","deduction_schema":null,"description":"Pedido de prueba","differential_pricing_id":null,"external_reference":"13","fee_details":[{"amount":5656,"fee_payer":"collector","type":"mercadopago_fee"}],"financing_group":null,"id":1336184619,"installments":1,"integrator_id":null,"issuer_id":"204","live_mode":false,"marketplace_owner":null,"merchant_account_id":null,"merchant_number":null,"metadata":{},"money_release_date":"2025-05-16T23:45:42.553-04:00","money_release_schema":null,"money_release_status":"released","net_amount":120000,"notification_url":null,"operation_type":"regular_payment","order":{"id":"31071633267","type":"mercadopago"},"payer":{"identification":{"number":"32659430","type":"DNI"},"entity_type":null,"phone":{"number":null,"extension":null,"area_code":null},"last_name":null,"id":"2439597953","type":null,"first_name":null,"email":"test_user_80507629@testuser.com"},"payment_method":{"data":{"routing_data":{"merchant_account_id":"21878194"}},"id":"master","issuer_id":"204","type":"credit_card"},"payment_method_id":"master","payment_type_id":"credit_card","platform_id":null,"point_of_interaction":{"application_data":{"name":"checkout-off","operating_system":null,"version":"v2"},"business_info":{"branch":"Merchant Services","sub_unit":"checkout_pro","unit":"online_payments"},"transaction_data":{"e2e_id":null},"type":"CHECKOUT"},"pos_id":null,"processing_mode":"aggregator","refunds":[],"release_info":null,"shipping_amount":0,"sponsor_id":null,"statement_descriptor":"Mercadopago*fake","status":"approved","status_detail":"accredited","store_id":null,"tags":null,"taxes":[{"type":"IVA","value":0}],"taxes_amount":0,"transaction_amount":120000,"transaction_amount_refunded":0,"transaction_details":{"acquirer_reference":null,"external_resource_url":null,"financial_institution":null,"installment_amount":120000,"net_received_amount":112047,"overpaid_amount":0,"payable_deferral_period":null,"payment_method_reference_id":null,"total_paid_amount":120000}}
+Objeto payment: stdClass Object
+(
+    [accounts_info] => 
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => stdClass Object
+        (
+            [ip_address] => 190.90.138.114
+            [items] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [quantity] => 1
+                            [title] => Pedido de prueba
+                            [unit_price] => 120000
+                        )
+
+                )
+
+            [tracking_id] => platform:v1-whitelabel,so:ALL,type:N/A,security:none
+        )
+
+    [authorization_code] => 301299
+    [binary_mode] => 
+    [brand_id] => 
+    [build_version] => 3.105.0-rc-8
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => stdClass Object
+        (
+            [cardholder] => stdClass Object
+                (
+                    [identification] => stdClass Object
+                        (
+                            [number] => 123456789
+                            [type] => CC
+                        )
+
+                    [name] => APRO
+                )
+
+            [country] => TUR
+            [date_created] => 2025-05-16T23:45:42.000-04:00
+            [date_last_updated] => 2025-05-16T23:45:42.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2030
+            [first_six_digits] => 525413
+            [id] => 
+            [last_four_digits] => 3564
+            [tags] => Array
+                (
+                    [0] => credit
+                )
+
+        )
+
+    [charges_details] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [accounts] => stdClass Object
+                        (
+                            [from] => collector
+                            [to] => mp
+                        )
+
+                    [amounts] => stdClass Object
+                        (
+                            [original] => 5656
+                            [refunded] => 0
+                        )
+
+                    [client_id] => 0
+                    [date_created] => 2025-05-16T23:45:42.000-04:00
+                    [id] => 1336184619-001
+                    [last_updated] => 2025-05-16T23:45:42.000-04:00
+                    [metadata] => stdClass Object
+                        (
+                            [source] => rule-engine
+                        )
+
+                    [name] => mercadopago_fee
+                    [refund_charges] => Array
+                        (
+                        )
+
+                    [reserve_id] => 
+                    [type] => fee
+                )
+
+        )
+
+    [charges_execution_info] => stdClass Object
+        (
+            [internal_execution] => stdClass Object
+                (
+                    [date] => 2025-05-16T23:45:42.186-04:00
+                    [execution_id] => 01JVE5HZQSS9AW5QYVFSY434XE
+                )
+
+        )
+
+    [collector_id] => 508877378
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => COP
+    [date_approved] => 2025-05-16T23:45:42.553-04:00
+    [date_created] => 2025-05-16T23:45:42.189-04:00
+    [date_last_updated] => 2025-05-16T23:45:42.553-04:00
+    [date_of_expiration] => 2025-05-19T23:45:41.907-04:00
+    [deduction_schema] => 
+    [description] => Pedido de prueba
+    [differential_pricing_id] => 
+    [external_reference] => 13
+    [fee_details] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [amount] => 5656
+                    [fee_payer] => collector
+                    [type] => mercadopago_fee
+                )
+
+        )
+
+    [financing_group] => 
+    [id] => 1336184619
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 204
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => stdClass Object
+        (
+        )
+
+    [money_release_date] => 2025-05-16T23:45:42.553-04:00
+    [money_release_schema] => 
+    [money_release_status] => released
+    [net_amount] => 120000
+    [notification_url] => 
+    [operation_type] => regular_payment
+    [order] => stdClass Object
+        (
+            [id] => 31071633267
+            [type] => mercadopago
+        )
+
+    [payer] => stdClass Object
+        (
+            [identification] => stdClass Object
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [entity_type] => 
+            [phone] => stdClass Object
+                (
+                    [number] => 
+                    [extension] => 
+                    [area_code] => 
+                )
+
+            [last_name] => 
+            [id] => 2439597953
+            [type] => 
+            [first_name] => 
+            [email] => test_user_80507629@testuser.com
+        )
+
+    [payment_method] => stdClass Object
+        (
+            [data] => stdClass Object
+                (
+                    [routing_data] => stdClass Object
+                        (
+                            [merchant_account_id] => 21878194
+                        )
+
+                )
+
+            [id] => master
+            [issuer_id] => 204
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => stdClass Object
+        (
+            [application_data] => stdClass Object
+                (
+                    [name] => checkout-off
+                    [operating_system] => 
+                    [version] => v2
+                )
+
+            [business_info] => stdClass Object
+                (
+                    [branch] => Merchant Services
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [transaction_data] => stdClass Object
+                (
+                    [e2e_id] => 
+                )
+
+            [type] => CHECKOUT
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [release_info] => 
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => Mercadopago*fake
+    [status] => approved
+    [status_detail] => accredited
+    [store_id] => 
+    [tags] => 
+    [taxes] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [type] => IVA
+                    [value] => 0
+                )
+
+        )
+
+    [taxes_amount] => 0
+    [transaction_amount] => 120000
+    [transaction_amount_refunded] => 0
+    [transaction_details] => stdClass Object
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 120000
+            [net_received_amount] => 112047
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 120000
+        )
+
+)
+
+Entró a pago aprobado
+external_reference: 13
+Entrando a PedidoService->realizarPedido
+Modo webhook, id_carrito: 13
+No se encontró el carrito o el cliente
+{"action":"payment.created","api_version":"v1","data":{"id":"1323381396"},"date_created":"2025-05-17T04:12:12Z","id":121336225701,"live_mode":false,"type":"payment","user_id":"508877378"}
+Respuesta de la API: {"accounts_info":null,"acquirer_reconciliation":[],"additional_info":{"ip_address":"190.90.138.118","items":[{"quantity":"1","title":"Pedido de prueba","unit_price":"120000"}],"tracking_id":"platform:v1-whitelabel,so:ALL,type:N/A,security:none"},"authorization_code":"301299","binary_mode":false,"brand_id":null,"build_version":"3.105.0-rc-8","call_for_authorize_id":null,"captured":true,"card":{"cardholder":{"identification":{"number":"123456789","type":"CC"},"name":"APRO"},"country":"TUR","date_created":"2025-05-17T00:12:12.000-04:00","date_last_updated":"2025-05-17T00:12:12.000-04:00","expiration_month":11,"expiration_year":2030,"first_six_digits":"525413","id":null,"last_four_digits":"3564","tags":["credit"]},"charges_details":[{"accounts":{"from":"collector","to":"mp"},"amounts":{"original":5656,"refunded":0},"client_id":0,"date_created":"2025-05-17T00:12:12.000-04:00","id":"1323381396-001","last_updated":"2025-05-17T00:12:12.000-04:00","metadata":{"source":"rule-engine"},"name":"mercadopago_fee","refund_charges":[],"reserve_id":null,"type":"fee"}],"charges_execution_info":{"internal_execution":{"date":"2025-05-17T00:12:12.390-04:00","execution_id":"01JVE72GNQYYD77G9JGGXFX8WK"}},"collector_id":508877378,"corporation_id":null,"counter_currency":null,"coupon_amount":0,"currency_id":"COP","date_approved":"2025-05-17T00:12:12.763-04:00","date_created":"2025-05-17T00:12:12.407-04:00","date_last_updated":"2025-05-17T00:12:12.763-04:00","date_of_expiration":"2025-05-20T00:12:12.092-04:00","deduction_schema":null,"description":"Pedido de prueba","differential_pricing_id":null,"external_reference":"13","fee_details":[{"amount":5656,"fee_payer":"collector","type":"mercadopago_fee"}],"financing_group":null,"id":1323381396,"installments":1,"integrator_id":null,"issuer_id":"204","live_mode":false,"marketplace_owner":null,"merchant_account_id":null,"merchant_number":null,"metadata":{},"money_release_date":"2025-05-17T00:12:12.763-04:00","money_release_schema":null,"money_release_status":"released","net_amount":120000,"notification_url":null,"operation_type":"regular_payment","order":{"id":"31093171872","type":"mercadopago"},"payer":{"identification":{"number":"32659430","type":"DNI"},"entity_type":null,"phone":{"number":null,"extension":null,"area_code":null},"last_name":null,"id":"2439597953","type":null,"first_name":null,"email":"test_user_80507629@testuser.com"},"payment_method":{"data":{"routing_data":{"merchant_account_id":"21878194"}},"id":"master","issuer_id":"204","type":"credit_card"},"payment_method_id":"master","payment_type_id":"credit_card","platform_id":null,"point_of_interaction":{"application_data":{"name":"checkout-off","operating_system":null,"version":"v2"},"business_info":{"branch":"Merchant Services","sub_unit":"checkout_pro","unit":"online_payments"},"transaction_data":{"e2e_id":null},"type":"CHECKOUT"},"pos_id":null,"processing_mode":"aggregator","refunds":[],"release_info":null,"shipping_amount":0,"sponsor_id":null,"statement_descriptor":"Mercadopago*fake","status":"approved","status_detail":"accredited","store_id":null,"tags":null,"taxes":[{"type":"IVA","value":0}],"taxes_amount":0,"transaction_amount":120000,"transaction_amount_refunded":0,"transaction_details":{"acquirer_reference":null,"external_resource_url":null,"financial_institution":null,"installment_amount":120000,"net_received_amount":112047,"overpaid_amount":0,"payable_deferral_period":null,"payment_method_reference_id":null,"total_paid_amount":120000}}
+Objeto payment: stdClass Object
+(
+    [accounts_info] => 
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => stdClass Object
+        (
+            [ip_address] => 190.90.138.118
+            [items] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [quantity] => 1
+                            [title] => Pedido de prueba
+                            [unit_price] => 120000
+                        )
+
+                )
+
+            [tracking_id] => platform:v1-whitelabel,so:ALL,type:N/A,security:none
+        )
+
+    [authorization_code] => 301299
+    [binary_mode] => 
+    [brand_id] => 
+    [build_version] => 3.105.0-rc-8
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => stdClass Object
+        (
+            [cardholder] => stdClass Object
+                (
+                    [identification] => stdClass Object
+                        (
+                            [number] => 123456789
+                            [type] => CC
+                        )
+
+                    [name] => APRO
+                )
+
+            [country] => TUR
+            [date_created] => 2025-05-17T00:12:12.000-04:00
+            [date_last_updated] => 2025-05-17T00:12:12.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2030
+            [first_six_digits] => 525413
+            [id] => 
+            [last_four_digits] => 3564
+            [tags] => Array
+                (
+                    [0] => credit
+                )
+
+        )
+
+    [charges_details] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [accounts] => stdClass Object
+                        (
+                            [from] => collector
+                            [to] => mp
+                        )
+
+                    [amounts] => stdClass Object
+                        (
+                            [original] => 5656
+                            [refunded] => 0
+                        )
+
+                    [client_id] => 0
+                    [date_created] => 2025-05-17T00:12:12.000-04:00
+                    [id] => 1323381396-001
+                    [last_updated] => 2025-05-17T00:12:12.000-04:00
+                    [metadata] => stdClass Object
+                        (
+                            [source] => rule-engine
+                        )
+
+                    [name] => mercadopago_fee
+                    [refund_charges] => Array
+                        (
+                        )
+
+                    [reserve_id] => 
+                    [type] => fee
+                )
+
+        )
+
+    [charges_execution_info] => stdClass Object
+        (
+            [internal_execution] => stdClass Object
+                (
+                    [date] => 2025-05-17T00:12:12.390-04:00
+                    [execution_id] => 01JVE72GNQYYD77G9JGGXFX8WK
+                )
+
+        )
+
+    [collector_id] => 508877378
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => COP
+    [date_approved] => 2025-05-17T00:12:12.763-04:00
+    [date_created] => 2025-05-17T00:12:12.407-04:00
+    [date_last_updated] => 2025-05-17T00:12:12.763-04:00
+    [date_of_expiration] => 2025-05-20T00:12:12.092-04:00
+    [deduction_schema] => 
+    [description] => Pedido de prueba
+    [differential_pricing_id] => 
+    [external_reference] => 13
+    [fee_details] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [amount] => 5656
+                    [fee_payer] => collector
+                    [type] => mercadopago_fee
+                )
+
+        )
+
+    [financing_group] => 
+    [id] => 1323381396
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 204
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => stdClass Object
+        (
+        )
+
+    [money_release_date] => 2025-05-17T00:12:12.763-04:00
+    [money_release_schema] => 
+    [money_release_status] => released
+    [net_amount] => 120000
+    [notification_url] => 
+    [operation_type] => regular_payment
+    [order] => stdClass Object
+        (
+            [id] => 31093171872
+            [type] => mercadopago
+        )
+
+    [payer] => stdClass Object
+        (
+            [identification] => stdClass Object
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [entity_type] => 
+            [phone] => stdClass Object
+                (
+                    [number] => 
+                    [extension] => 
+                    [area_code] => 
+                )
+
+            [last_name] => 
+            [id] => 2439597953
+            [type] => 
+            [first_name] => 
+            [email] => test_user_80507629@testuser.com
+        )
+
+    [payment_method] => stdClass Object
+        (
+            [data] => stdClass Object
+                (
+                    [routing_data] => stdClass Object
+                        (
+                            [merchant_account_id] => 21878194
+                        )
+
+                )
+
+            [id] => master
+            [issuer_id] => 204
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => stdClass Object
+        (
+            [application_data] => stdClass Object
+                (
+                    [name] => checkout-off
+                    [operating_system] => 
+                    [version] => v2
+                )
+
+            [business_info] => stdClass Object
+                (
+                    [branch] => Merchant Services
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [transaction_data] => stdClass Object
+                (
+                    [e2e_id] => 
+                )
+
+            [type] => CHECKOUT
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [release_info] => 
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => Mercadopago*fake
+    [status] => approved
+    [status_detail] => accredited
+    [store_id] => 
+    [tags] => 
+    [taxes] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [type] => IVA
+                    [value] => 0
+                )
+
+        )
+
+    [taxes_amount] => 0
+    [transaction_amount] => 120000
+    [transaction_amount_refunded] => 0
+    [transaction_details] => stdClass Object
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 120000
+            [net_received_amount] => 112047
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 120000
+        )
+
+)
+
+Entró a pago aprobado
+external_reference: 13
+Entrando a PedidoService->realizarPedido
+Modo webhook, id_carrito: 13
+Total calculado: 120000
+Pedido creado: 19
+Detalles y stock actualizados
+Carrito cambiado a completado
+Pago aprobado para carrito: 13

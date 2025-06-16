@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
 </head>
 <body class="text-white" style="<?php echo $varColorAplication; ?>">
     <div class="container">
@@ -97,15 +97,15 @@
                         <div class="mb-3">
                             <input type="password" class="form-control form-control-lg py-3" id="passwordLogin" name="passwordLogin" placeholder="Contraseña"  autocomplete="nope" required>
                         </div>
-                        <div class="d-grid gap-2">
+                        <div class="d-grid gap-2 mb-3">
                             <button id="btnIniciarSesion" class="btn btn-primary btn-lg fw-bold fs-5 py-2" style="<?php echo $varColorSecundaryAplication; ?>">Iniciar sesión</button>
                         </div>
-                        <div class="text-center mt-3">
-                            <a href="#" class="text-primary text-decoration-none">¿Olvidaste tu contraseña?</a>
+                        <div class="d-grid gap-2">
+                        <button id="btnIniciarSesion" class="btn btn-primary btn-lg fw-bold fs-5 py-2"  data-bs-toggle="modal" data-bs-target="#modalRecuperarContraseña" style="<?php echo $varColorAplication;?>">Recuperar contraseña</button>
                         </div>
                         <hr class="my-4">
                         <div class="d-grid gap-2">
-                            <button type="button"  id="abrirModalRegistro" class="btn btn-success btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#modalRegistroUsuario">Crear cuenta nueva</button>
+                            <button type="button"  id="abrirModalRegistro" class="btn btn-success btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#modalRegistroUsuario" style="<?php echo $varColorAplication;?>">Crear cuenta nueva</button>
                         </div>
                 </div>
             </div>
@@ -150,6 +150,16 @@
         </div>
     </div>
     <?php include('archivo/views/modales/modales-index.php'); ?>
+    <!-- Overlay de carga Bootstrap -->
+    <div id="overlay-cargando" class="position-fixed top-0 start-0 w-100 h-100 d-none justify-content-center align-items-center" style="background:rgba(0,0,0,0.4);z-index:9999;">
+      <div class="bg-white rounded p-4 d-flex flex-column align-items-center shadow">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
+        <p class="mt-3 mb-0 text-dark">Enviando correo de recuperación...</p>
+      </div>
+    </div>
+    <!-- Fin overlay de carga -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="herramientas/js/usuario/usuario.js"></script>
 </body>

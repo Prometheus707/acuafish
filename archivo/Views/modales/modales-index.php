@@ -58,4 +58,25 @@
     </div>
   </div>
 </div>
+<!---- recuperar contraseña -->
+<div class="modal fade" id="modalRecuperarContraseña" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalRecuperarContraseñaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-dark" id="modalRecuperarContraseñaLabel">Recuperar Contraseña</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="emailRecuperarContraseña" class="form-label text-dark">Correo Electrónico</label>
+          <input type="email" class="form-control bg-light text-dark" id="emailRecuperarContraseña" name="emailRecuperarContraseña" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnRecuperarContrasena" name="btnRecuperarContrasena" type="button" class="btn" style="<?php echo $varColorAplication;?>">Recuperar Contraseña</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--FIN MODAL DE REGISTRO -->
 

@@ -21,7 +21,7 @@
             }  
             catch (PDOException $e) {
                 $this->pdo->rollBack();
-                error_log("Error al cambiar el rol: " . $e->getMessage());
+                throw new Exception("error al cambiar del rol"); 
                 throw $e;   
             }
         }
@@ -41,7 +41,7 @@
                 return True;
             } catch (PDOException $e) {
                 $this->pdo->rollBack();
-                error_log("Registro fallido: " . $e->getMessage());
+                throw new Exception("Error al verificar registrar usuario"); 
                 throw $e; 
             }
         }
@@ -88,6 +88,31 @@
             }
             catch(PDOException $e){
                 throw new Exception("Error al buscar usuarios");
+            }
+        }
+
+        public function recuperarContrasena($request){
+            try{
+                $query = $this->pdo->prepare("SELECT * FROM usuarios WHERE email = :correo LIMIT 1");
+                $query->bindParam(':correo', $request['email'], PDO::PARAM_STR);
+                $query->execute();
+                return $query->fetch(PDO::FETCH_ASSOC);
+            }
+            catch(PDOException $e){
+                throw new Exception("Error al recuperar contraseña");
+            }
+        }
+
+        public function actualizarContrasena($request){
+            try{
+                $query = $this->pdo->prepare("UPDATE usuarios SET password = :password WHERE email = :email");
+                $query->bindParam(':password', $request['password'], PDO::PARAM_STR);
+                $query->bindParam(':email', $request['email'], PDO::PARAM_STR);
+                $query->execute();
+                return True;
+            }
+            catch(PDOException $e){
+                throw new Exception("Error al actualizar contraseña");
             }
         }
     }

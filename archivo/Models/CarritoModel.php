@@ -107,5 +107,28 @@ class CarritoModel{
             return false;
         }
     }
+
+    public function obtenerMontoCarrito($idCarrito) {
+        try {
+            $query = $this->pdo->prepare("SELECT SUM(precio_unitario * cantidad) as total FROM carrito_item WHERE id_carrito_fk = :idCarrito");
+            $query->bindParam(':idCarrito', $idCarrito);
+            $query->execute();
+            $row = $query->fetch(PDO::FETCH_ASSOC);
+            return $row['total'] ?? 0;
+        } catch(PDOException $e) {
+            return 0;
+        }
+    }
+    // Buscar carrito por ID (para uso en webhook)
+    public function buscarCarritoPorId($idCarrito) {
+        try {
+            $query = $this->pdo->prepare("SELECT * FROM carritos WHERE idCarrito = :idCarrito");
+            $query->bindParam(':idCarrito', $idCarrito, PDO::PARAM_INT);
+            $query->execute();
+            return $query->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
 }
 ?>

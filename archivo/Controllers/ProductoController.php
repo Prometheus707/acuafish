@@ -72,6 +72,18 @@ class ProductoController {
             return;
         }
     }
+
+    private function actualizarStock($request){
+        try {
+            $response = $this->ProductoService->actualizarStock($request);
+            ResponseHandler::success("producto mermado con exito", $response);      
+        }   
+        catch (Exception $e) {
+            ResponseHandler::error($e->getMessage());
+            return;
+        }
+    }
+
 }
 $pdo = Database::getInstance()->getConnection();
 $productoService = new ProductoService($pdo);
